@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Card</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background: #ffe3f3;
+      margin: 0;
+      padding: 20px;
+    }
+    #card {
+      max-inline-size: 90%;
+      margin: 20px auto;
+    }
+    #waifuImg {
+      inline-size: 100%;
+      max-inline-size: 250px;
+      border-radius: 16px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      margin-block-start: 20px;
+      background: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #ff85c1;
+    }
+  </style>
+</head>
+<body>
+  <h1>💖 Photo Card 💖</h1>
+  <div id="card">
+    <img id="waifuImg" src="https://i.pinimg.com/736x/08/28/98/08289836db570402c679a30df7d7b8e0.jpg" width="200">
+    <p id="waifuName">Random card</p>
+  </div>
+  <button onclick="summonWaifu()">สุ่มการ์ด</button>
+
+  <script>
+    const waifus = [
+      { name: "Ariana grande", img: "https://i.pinimg.com/736x/2c/ff/cf/2cffcfbbbd0eb561f08a84fce4ed84b4.jpg" },
+      { name: "Olivia rodrigo", img: "https://i.pinimg.com/736x/af/33/db/af33db5d2013bf203c30d50659ae8b0c.jpg" },
+      { name: "Karina", img: "https://i.pinimg.com/736x/95/9a/c3/959ac3d300b94737c8fdfa40c3b6affc.jpg" },
+      { name: "Mina", img: "https://i.pinimg.com/736x/83/42/3c/83423c07f7a62a9150c60509fd064fdd.jpg"},
+      { name: "Rose", img: "https://i.pinimg.com/736x/21/b4/06/21b406b1d3ac15360d5c0233e9f6a62d.jpg"}
+    ];
+    function summonWaifu() {
+        const chosen = waifus[Math.floor(Math.random() * waifus.length)];
+        document.getElementById('waifuImg').src = chosen.img;
+        document.getElementById('waifuName').innerText = "Photo card";
+    }
+  </script>
+</body>
+</html>
